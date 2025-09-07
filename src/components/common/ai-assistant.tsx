@@ -53,17 +53,17 @@ export function AIAssistant() {
     <>
       {/* Floating Chat Button */}
       <motion.div
-        className="fixed bottom-6 right-6 z-50"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 2, duration: 0.5 }}
       >
         <Button
           size="icon"
-          className="w-14 h-14 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg"
+          className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg"
           onClick={() => setIsOpen(true)}
         >
-          <MessageCircle className="w-6 h-6 text-white" />
+          <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
         </Button>
       </motion.div>
 
@@ -74,15 +74,15 @@ export function AIAssistant() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-end sm:items-center justify-center p-4"
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4"
           >
             <motion.div
               initial={{ y: 100, scale: 0.9 }}
               animate={{ y: 0, scale: 1 }}
               exit={{ y: 100, scale: 0.9 }}
-              className="w-full max-w-md"
+              className="w-full h-full sm:h-auto sm:max-w-md sm:max-h-[600px] lg:max-w-lg xl:max-w-xl"
             >
-              <Card className="h-[500px] flex flex-col">
+              <Card className="h-full sm:h-[500px] lg:h-[600px] flex flex-col rounded-none sm:rounded-lg chat-modal">
                 <CardHeader className="flex flex-row items-center justify-between pb-3">
                   <div className="flex items-center space-x-2">
                     <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
@@ -117,7 +117,7 @@ export function AIAssistant() {
 
                 <CardContent className="flex-1 flex flex-col p-0">
                   {/* Messages */}
-                  <div className="flex-1 overflow-y-auto p-4 space-y-4">
+                  <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4 chat-messages">
                     {messages.map((message) => (
                       <motion.div
                         key={message.id}
@@ -125,16 +125,16 @@ export function AIAssistant() {
                         animate={{ opacity: 1, y: 0 }}
                         className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                       >
-                        <div className={`flex items-start space-x-2 max-w-[80%] ${message.sender === 'user' ? 'flex-row-reverse space-x-reverse' : ''}`}>
-                          <div className={`w-6 h-6 rounded-full flex items-center justify-center ${message.sender === 'user' ? 'bg-blue-600' : 'bg-gradient-to-r from-purple-600 to-pink-600'}`}>
+                        <div className={`flex items-start space-x-2 max-w-[85%] sm:max-w-[80%] ${message.sender === 'user' ? 'flex-row-reverse space-x-reverse' : ''}`}>
+                          <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${message.sender === 'user' ? 'bg-blue-600' : 'bg-gradient-to-r from-purple-600 to-pink-600'}`}>
                             {message.sender === 'user' ? (
                               <User className="w-3 h-3 text-white" />
                             ) : (
                               <Bot className="w-3 h-3 text-white" />
                             )}
                           </div>
-                          <div className={`p-3 rounded-lg ${message.sender === 'user' ? 'bg-blue-600 text-white' : 'bg-gray-100 dark:bg-gray-800'}`}>
-                            <p className="text-sm">{message.content}</p>
+                          <div className={`p-3 rounded-lg break-words overflow-wrap-anywhere chat-message ${message.sender === 'user' ? 'bg-blue-600 text-white' : 'bg-gray-100 dark:bg-gray-800'}`}>
+                            <p className="text-sm leading-relaxed whitespace-pre-wrap">{message.content}</p>
                           </div>
                         </div>
                       </motion.div>
@@ -145,8 +145,8 @@ export function AIAssistant() {
                         animate={{ opacity: 1 }}
                         className="flex justify-start"
                       >
-                        <div className="flex items-start space-x-2">
-                          <div className="w-6 h-6 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                        <div className="flex items-start space-x-2 max-w-[85%] sm:max-w-[80%]">
+                          <div className="w-6 h-6 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
                             <Bot className="w-3 h-3 text-white" />
                           </div>
                           <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
@@ -164,13 +164,13 @@ export function AIAssistant() {
 
                   {/* Error Display */}
                   {error && (
-                    <div className="px-4 py-2 bg-red-50 dark:bg-red-900/20 border-t border-red-200 dark:border-red-800">
-                      <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
+                    <div className="px-3 sm:px-4 py-2 bg-red-50 dark:bg-red-900/20 border-t border-red-200 dark:border-red-800">
+                      <p className="text-xs sm:text-sm text-red-600 dark:text-red-400 break-words">{error}</p>
                     </div>
                   )}
 
                   {/* Input */}
-                  <div className="p-4 border-t">
+                  <div className="p-3 sm:p-4 border-t bg-white dark:bg-gray-900">
                     <div className="flex space-x-2">
                       <Input
                         value={inputValue}
@@ -178,12 +178,13 @@ export function AIAssistant() {
                         onKeyDown={handleKeyPress}
                         placeholder="Ask me anything..."
                         disabled={isLoading}
-                        className="flex-1"
+                        className="flex-1 text-sm sm:text-base"
                       />
                       <Button
                         onClick={handleSendMessage}
                         disabled={!inputValue.trim() || isLoading}
                         size="icon"
+                        className="flex-shrink-0"
                       >
                         <Send className="w-4 h-4" />
                       </Button>

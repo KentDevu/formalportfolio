@@ -244,6 +244,37 @@ html {
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
+/* Chat component global styles */
+.chat-message {
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.chat-modal {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+/* Ensure proper scrolling in chat */
+.chat-messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.3);
+  border-radius: 2px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.5);
+}
+
 /* Mobile responsive fixes */
 @media (max-width: 768px) {
   .container {
@@ -281,5 +312,16 @@ html {
   button, a {
     min-height: 44px;
     min-width: 44px;
+  }
+  
+  /* Chat message word wrapping */
+  .break-words {
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .overflow-wrap-anywhere {
+    overflow-wrap: anywhere;
   }
 }
