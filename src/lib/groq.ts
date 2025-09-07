@@ -6,7 +6,7 @@ let groq: Groq | null = null
 function getGroqClient() {
   if (!groq && process.env.NEXT_PUBLIC_GROQ_API_KEY) {
     groq = new Groq({
-      apiKey: process.env.NEXT_PUBLIC_GROQ_API_KEY,
+      apiKey: "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",
       dangerouslyAllowBrowser: true // Note: In production, use a server-side API route for security
     })
   }

@@ -171,9 +171,9 @@ export function Navigation() {
                   >
                     <Link
                       href={item.href}
-                      className={`block text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-medium relative ${
+                      className={`block text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-medium relative py-2 pl-4 ${
                         isActive 
-                          ? 'text-purple-600 dark:text-purple-400' 
+                          ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20 rounded-lg' 
                           : ''
                       }`}
                       onClick={() => setIsOpen(false)}
@@ -182,9 +182,9 @@ export function Navigation() {
                       {/* Active indicator for mobile */}
                       {isActive && (
                         <motion.div
-                          className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-600 to-pink-600 rounded-r"
-                          initial={{ opacity: 0, scaleY: 0 }}
-                          animate={{ opacity: 1, scaleY: 1 }}
+                          className="absolute left-1 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full"
+                          initial={{ opacity: 0, scale: 0 }}
+                          animate={{ opacity: 1, scale: 1 }}
                           transition={{ duration: 0.3 }}
                         />
                       )}
