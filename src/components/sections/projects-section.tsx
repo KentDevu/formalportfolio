@@ -79,7 +79,6 @@ export function ProjectsSection() {
                     {project.githubUrl && (
                       <Button
                         size="sm"
-                        variant="outline"
                         className="bg-white text-black border-white hover:bg-gray-100"
                         onClick={() => window.open(project.githubUrl, '_blank')}
                       >
