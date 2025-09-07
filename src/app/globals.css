@@ -258,8 +258,13 @@ html {
 }
 
 /* Ensure proper scrolling in chat */
+.chat-messages {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+}
+
 .chat-messages::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 
 .chat-messages::-webkit-scrollbar-track {
@@ -267,12 +272,28 @@ html {
 }
 
 .chat-messages::-webkit-scrollbar-thumb {
-  background: rgba(156, 163, 175, 0.3);
-  border-radius: 2px;
+  background: rgba(156, 163, 175, 0.4);
+  border-radius: 3px;
 }
 
 .chat-messages::-webkit-scrollbar-thumb:hover {
-  background: rgba(156, 163, 175, 0.5);
+  background: rgba(156, 163, 175, 0.6);
+}
+
+/* Dark mode scrollbar */
+.dark .chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(107, 114, 128, 0.4);
+}
+
+.dark .chat-messages::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 114, 128, 0.6);
+}
+
+/* Force scrolling behavior */
+.chat-messages {
+  height: 100%;
+  min-height: 200px;
+  max-height: 100%;
 }
 
 /* Mobile responsive fixes */

@@ -16,12 +16,27 @@ export function AIAssistant() {
   const { messages, isLoading, error, sendMessage, clearMessages, addWelcomeMessage } = useChat()
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    if (messagesEndRef.current) {
+      // Use setTimeout to ensure DOM is updated
+      setTimeout(() => {
+        messagesEndRef.current?.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'end'
+        })
+      }, 100)
+    }
   }
 
   useEffect(() => {
     scrollToBottom()
   }, [messages])
+
+  useEffect(() => {
+    // Force scroll to bottom when modal opens
+    if (isOpen) {
+      setTimeout(() => scrollToBottom(), 300)
+    }
+  }, [isOpen])
 
   useEffect(() => {
     // Add welcome message when component mounts
@@ -35,6 +50,8 @@ export function AIAssistant() {
 
     await sendMessage(inputValue)
     setInputValue('')
+    // Ensure scroll to bottom after sending
+    setTimeout(() => scrollToBottom(), 100)
   }
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -83,7 +100,7 @@ export function AIAssistant() {
               className="w-full h-full sm:h-auto sm:max-w-md sm:max-h-[600px] lg:max-w-lg xl:max-w-xl"
             >
               <Card className="h-full sm:h-[500px] lg:h-[600px] flex flex-col rounded-none sm:rounded-lg chat-modal">
-                <CardHeader className="flex flex-row items-center justify-between pb-3">
+                <CardHeader className="flex flex-row items-center justify-between pb-3 flex-shrink-0">
                   <div className="flex items-center space-x-2">
                     <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
                       <Bot className="w-4 h-4 text-white" />
@@ -115,9 +132,9 @@ export function AIAssistant() {
                   </div>
                 </CardHeader>
 
-                <CardContent className="flex-1 flex flex-col p-0">
+                <CardContent className="flex-1 flex flex-col p-0 min-h-0">
                   {/* Messages */}
-                  <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4 chat-messages">
+                  <div className="flex-1 overflow-y-auto overflow-x-hidden p-3 sm:p-4 space-y-3 sm:space-y-4 chat-messages min-h-0">
                     {messages.map((message) => (
                       <motion.div
                         key={message.id}
@@ -159,18 +176,18 @@ export function AIAssistant() {
                         </div>
                       </motion.div>
                     )}
-                    <div ref={messagesEndRef} />
+                    <div ref={messagesEndRef} className="h-1" />
                   </div>
 
                   {/* Error Display */}
                   {error && (
-                    <div className="px-3 sm:px-4 py-2 bg-red-50 dark:bg-red-900/20 border-t border-red-200 dark:border-red-800">
+                    <div className="px-3 sm:px-4 py-2 bg-red-50 dark:bg-red-900/20 border-t border-red-200 dark:border-red-800 flex-shrink-0">
                       <p className="text-xs sm:text-sm text-red-600 dark:text-red-400 break-words">{error}</p>
                     </div>
                   )}
 
                   {/* Input */}
-                  <div className="p-3 sm:p-4 border-t bg-white dark:bg-gray-900">
+                  <div className="p-3 sm:p-4 border-t bg-white dark:bg-gray-900 flex-shrink-0">
                     <div className="flex space-x-2">
                       <Input
                         value={inputValue}
