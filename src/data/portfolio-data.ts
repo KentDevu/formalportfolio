@@ -114,7 +114,7 @@ export const mockBlogPosts: BlogPost[] = [
     publishedAt: "2025-09-07",
     readTime: "8 min read",
     tags: ["CyberSecurity", "TryHackMe", "Learning"],
-    url: "https://learncybersecwithme.blogspot.com/2025/09/tryhackme-pre-security-learning-journey.html",
+    url: "https://github.com/KentDevu/CyberSecurity-Related-Blogs/blob/master/tryhackme-presecurity-journey.md",
     image: "/blog-1.jpg"
   },
   {
@@ -124,7 +124,7 @@ export const mockBlogPosts: BlogPost[] = [
     publishedAt: "2024-01-08",
     readTime: "12 min read", 
     tags: ["AI", "API", "Web Development"],
-    url: "https://learncybersecwithme.blogspot.com/2025/09/tryhackme-pre-security-learning-journey.html",
+    url: "https://github.com/KentDevu/CyberSecurity-Related-Blogs/blob/master/tryhackme-presecurity-journey.md",
     image: "/blog-2.jpg"
   },
   {
@@ -134,6 +134,6 @@ export const mockBlogPosts: BlogPost[] = [
     publishedAt: "2024-01-01",
     readTime: "6 min read",
     tags: ["TypeScript", "JavaScript", "Future"],
-    url: "https://learncybersecwithme.blogspot.com/2025/09/tryhackme-pre-security-learning-journey.html"
+    url: "https://github.com/KentDevu/CyberSecurity-Related-Blogs/blob/master/tryhackme-presecurity-journey.md"
   }
 ];
