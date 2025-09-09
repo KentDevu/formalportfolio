@@ -119,12 +119,12 @@ export const mockBlogPosts: BlogPost[] = [
   },
   {
     id: "2",
-    title: "AI Integration in Modern Web Apps",
-    excerpt: "Exploring practical ways to integrate AI capabilities into web applications using modern APIs.",
+    title: "Tryhackme CyberSecurity-101 Learning Path Room 1",
+    excerpt: "Exploring the Tryhackme CyberSecurity-101 Learning Path Room 1",
     publishedAt: "2024-01-08",
     readTime: "12 min read", 
-    tags: ["AI", "API", "Web Development"],
-    url: "https://github.com/KentDevu/CyberSecurity-Related-Blogs/blob/master/tryhackme-presecurity-journey.md",
+    tags: ["CyberSecurity", "TryHackMe", "Learning"],
+    url: "https://github.com/KentDevu/CyberSecurity-Related-Blogs/blob/master/cybersecurity101-room1.md",
     image: "/blog-2.jpg"
   },
   {
