@@ -129,11 +129,11 @@ export const mockBlogPosts: BlogPost[] = [
   },
   {
     id: "3",
-    title: "The Future of TypeScript",
-    excerpt: "A deep dive into upcoming TypeScript features and how they'll shape the future of web development.",
+    title: "Tryhackme CyberSecurity-101 Learning Path Room 2",
+    excerpt: "Exploring the Tryhackme CyberSecurity-101 Learning Path Room 2",
     publishedAt: "2024-01-01",
     readTime: "6 min read",
-    tags: ["TypeScript", "JavaScript", "Future"],
-    url: "https://github.com/KentDevu/CyberSecurity-Related-Blogs/blob/master/tryhackme-presecurity-journey.md"
+    tags: ["CyberSecurity", "TryHackMe", "Learning"],
+    url: "https://github.com/KentDevu/CyberSecurity-Related-Blogs/blob/master/cybersecurity101-room2.md"
   }
 ];
