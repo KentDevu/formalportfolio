@@ -18,6 +18,19 @@ export interface Achievement {
   category: string;
 }
 
+export interface Certification {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  expiryDate?: string;
+  credentialId?: string;
+  credentialUrl?: string;
+  badge?: string;
+  description: string;
+  skills: string[];
+}
+
 export interface BlogPost {
   id: string;
   title: string;

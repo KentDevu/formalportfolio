@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Send, Mail, MapPin, Phone, Github, Linkedin, Twitter, CheckCircle, AlertCircle, Instagram, Facebook } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
@@ -16,6 +17,30 @@ const socialIcons = {
   twitter: Twitter,
   instagram: Instagram,
   facebook: Facebook,
+}
+
+// Custom icon component for TryHackMe with light/dark mode support
+const TryHackMeIcon = ({ className }: { className?: string }) => (
+  <>
+    <Image
+      src="/assets/icon/Tryhackme-Icons.svg"
+      alt="TryHackMe"
+      width={20}
+      height={20}
+      className={`${className} block dark:hidden`}
+    />
+    <Image
+      src="/assets/icon/Tryhackme-Icons-white.svg"
+      alt="TryHackMe"
+      width={20}
+      height={20}
+      className={`${className} hidden dark:block`}
+    />
+  </>
+)
+
+const customIcons = {
+  tryhackme: TryHackMeIcon,
 }
 
 interface FormData {
@@ -165,8 +190,11 @@ export function ContactSection() {
               </h4>
               <div className="flex space-x-4">
                 {profile.socialLinks.map((social, index) => {
-                  const IconComponent = socialIcons[social.icon as keyof typeof socialIcons]
-                  if (!IconComponent) return null
+                  // Check if it's a custom icon first, then fallback to Lucide icons
+                  const CustomIcon = customIcons[social.icon as keyof typeof customIcons]
+                  const LucideIcon = socialIcons[social.icon as keyof typeof socialIcons]
+                  
+                  if (!CustomIcon && !LucideIcon) return null
                   
                   return (
                     <motion.a
@@ -174,14 +202,18 @@ export function ContactSection() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:text-white transition-all duration-300"
+                      className="w-12 h-12 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 transition-all duration-300"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: 0.1 * index }}
                     >
-                      <IconComponent className="w-5 h-5" />
+                      {CustomIcon ? (
+                        <CustomIcon className="w-5 h-5" />
+                      ) : LucideIcon ? (
+                        <LucideIcon className="w-5 h-5" />
+                      ) : null}
                     </motion.a>
                   )
                 })}
@@ -328,9 +360,8 @@ export function ContactSection() {
                 Start a Conversation
               </Button>
               <Button
-                variant="outline"
                 onClick={() => window.open(profile.socialLinks.find(link => link.name === 'LinkedIn')?.url, '_blank')}
-                className="border-white text-black hover:bg-gray-100 hover:text-gray-900"
+                className="bg-white text-gray-900 hover:bg-gray-100"
               >
                 Connect on LinkedIn
               </Button>

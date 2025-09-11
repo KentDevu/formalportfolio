@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail, Heart, Instagram, Facebook } from 'lucide-react'
 import { profile } from '@/data/portfolio-data'
@@ -12,6 +13,30 @@ const socialIcons = {
   instagram: Instagram,
   facebook: Facebook,
   email: Mail,
+}
+
+// Custom icon component for TryHackMe with light/dark mode support
+const TryHackMeIcon = ({ className }: { className?: string }) => (
+  <>
+    <Image
+      src="/assets/icon/Tryhackme-Icons.svg"
+      alt="TryHackMe"
+      width={24}
+      height={24}
+      className={`${className} block dark:hidden`}
+    />
+    <Image
+      src="/assets/icon/Tryhackme-Icons-white.svg"
+      alt="TryHackMe"
+      width={24}
+      height={24}
+      className={`${className} hidden dark:block`}
+    />
+  </>
+)
+
+const customIcons = {
+  tryhackme: TryHackMeIcon,
 }
 
 export function Footer() {
@@ -72,8 +97,11 @@ export function Footer() {
             </h4>
             <div className="flex space-x-4">
               {profile.socialLinks.map((social, index) => {
-                const IconComponent = socialIcons[social.icon as keyof typeof socialIcons]
-                if (!IconComponent) return null
+                // Check if it's a custom icon first, then fallback to Lucide icons
+                const CustomIcon = customIcons[social.icon as keyof typeof customIcons]
+                const LucideIcon = socialIcons[social.icon as keyof typeof socialIcons]
+                
+                if (!CustomIcon && !LucideIcon) return null
                 
                 return (
                   <motion.a
@@ -88,7 +116,11 @@ export function Footer() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3, delay: 0.1 * index }}
                   >
-                    <IconComponent className="h-6 w-6" />
+                    {CustomIcon ? (
+                      <CustomIcon className="h-6 w-6" />
+                    ) : LucideIcon ? (
+                      <LucideIcon className="h-6 w-6" />
+                    ) : null}
                     <span className="sr-only">{social.name}</span>
                   </motion.a>
                 )

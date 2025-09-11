@@ -112,11 +112,11 @@ export function Navigation() {
                     }`}
                   >
                     {item.name}
-                    {/* Active indicator */}
+                    {/* Active indicator - desktop only */}
                     {isActive && (
                       <motion.div
                         layoutId="activeTab"
-                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full"
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full hidden md:block"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.3 }}
@@ -179,15 +179,6 @@ export function Navigation() {
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
-                      {/* Active indicator for mobile */}
-                      {isActive && (
-                        <motion.div
-                          className="absolute left-1 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full"
-                          initial={{ opacity: 0, scale: 0 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.3 }}
-                        />
-                      )}
                     </Link>
                   </motion.div>
                 )
