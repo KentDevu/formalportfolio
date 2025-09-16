@@ -108,27 +108,25 @@ export const achievements: Achievement[] = [
 export const certifications: Certification[] = [
   {
     id: "1",
-    title: "AWS Cloud Essentials",
-    issuer: "Amazon Web Services",
+    title: "Pre-Security",
+    issuer: "TryHackMe",
     date: "2025",
-    expiryDate: "2028",
-    credentialId: "AWS-SA-123456",
-    credentialUrl: "https://www.credly.com/badges/6584f3ec-0d4c-4a14-a5ff-5aef1420fc46/linked_in_profile",
-    badge: "/assets/badge/awsbadge.png",
-    description: "Validates expertise in designing distributed systems on AWS with emphasis on scalability, elasticity, security, and cost-optimization.",
-    skills: ["AWS", "Cloud Architecture", "EC2", "S3", "RDS", "VPC", "CloudFormation"]
+    credentialId: "THM-FOQIJG66QM",
+    credentialUrl: "https://tryhackme.com/certificate/THM-FOQIJG66QM",
+    badge: "/assets/badge/tryhackme_logo.jpg",
+    description: "Fundamental understanding of networking concepts.",
+    skills: ["Cybersecurity", "Networking Basics", "Linux Fundamentals", "Web Security", "Cryptography"]
   },
   {
     id: "2",
-    title: "Cisco CCNA ITN - Introduction to Networks",
-    issuer: "Cisco Networking Academy",
+    title: "Cyber Security 101",
+    issuer: "TryHackMe",
     date: "2025",
-    expiryDate: "2028",
-    credentialId: "CCNA-ITN-001",
-    credentialUrl: "https://www.credly.com/badges/74a559a7-755c-4584-98f8-fd03ea9eb594",
-    badge: "/assets/badge/CCNAITN__1_.png",
-    description: "Foundational networking concepts including network protocols, LAN switching technologies, and basic router configurations.",
-    skills: ["Networking", "TCP/IP", "Ethernet", "Switching", "Routing Fundamentals"]
+    credentialId: "THM-EWBPJEGR50",
+    credentialUrl: "https://tryhackme.com/certificate/THM-EWBPJEGR50",
+    badge: "/assets/badge/tryhackme_logo.jpg",
+    description: "Comprehensive introduction to cybersecurity principles and practices.",
+    skills: ["Cybersecurity Fundamentals", "Threat Analysis", "Vulnerability Assessment", "Network Security", "Incident Response"]
   },
   {
     id: "3",
@@ -156,6 +154,30 @@ export const certifications: Certification[] = [
   },
   {
     id: "5",
+    title: "Cisco CCNA ITN - Introduction to Networks",
+    issuer: "Cisco Networking Academy",
+    date: "2025",
+    expiryDate: "2028",
+    credentialId: "CCNA-ITN-001",
+    credentialUrl: "https://www.credly.com/badges/74a559a7-755c-4584-98f8-fd03ea9eb594",
+    badge: "/assets/badge/CCNAITN__1_.png",
+    description: "Foundational networking concepts including network protocols, LAN switching technologies, and basic router configurations.",
+    skills: ["Networking", "TCP/IP", "Ethernet", "Switching", "Routing Fundamentals"]
+  },
+  {
+    id: "6",
+    title: "AWS Cloud Essentials",
+    issuer: "Amazon Web Services",
+    date: "2025",
+    expiryDate: "2028",
+    credentialId: "AWS-SA-123456",
+    credentialUrl: "https://www.credly.com/badges/6584f3ec-0d4c-4a14-a5ff-5aef1420fc46/linked_in_profile",
+    badge: "/assets/badge/awsbadge.png",
+    description: "Validates expertise in designing distributed systems on AWS with emphasis on scalability, elasticity, security, and cost-optimization.",
+    skills: ["AWS", "Cloud Architecture", "EC2", "S3", "RDS", "VPC", "CloudFormation"]
+  },
+  {
+    id: "7",
     title: "Cloud Computing Fundamentals",
     issuer: "Data Camp",
     date: "2025",
@@ -167,7 +189,7 @@ export const certifications: Certification[] = [
     skills: ["Cloud Computing", "IaaS", "PaaS", "SaaS", "Cloud Security", "Migration Strategies"]
   },
   {
-    id: "6",
+    id: "8",
     title: "Understanding Data Engineering",
     issuer: "Data Camp",
     date: "2025",
@@ -179,7 +201,7 @@ export const certifications: Certification[] = [
     skills: ["Data Pipelines", "ETL/ELT", "Big Data", "Apache Spark", "Data Warehousing", "Stream Processing"]
   },
   {
-    id: "7",
+    id: "9",
     title: "Data Literacy Fundamentals",
     issuer: "Data Camp",
     date: "2025",
@@ -190,7 +212,7 @@ export const certifications: Certification[] = [
     skills: ["Data Analysis", "Statistical Thinking", "Data Interpretation", "Business Intelligence", "Data Ethics"]
   },
   {
-    id: "8",
+    id: "10",
     title: "Understanding Data Science",
     issuer: "Data Camp",
     date: "2025",
@@ -201,7 +223,7 @@ export const certifications: Certification[] = [
     skills: ["Machine Learning", "Statistical Analysis", "Python", "R", "Data Mining", "Predictive Analytics"]
   },
   {
-    id: "9",
+    id: "11",
     title: "Understanding Data Visualization",
     issuer: "Data Camp",
     date: "2025",
@@ -212,7 +234,7 @@ export const certifications: Certification[] = [
     skills: ["Data Visualization", "Tableau", "Power BI", "D3.js", "Dashboard Design", "Visual Analytics"]
   },
   {
-    id: "10",
+    id: "12",
     title: "Introduction to Python Programming",
     issuer: "Data Camp",
     date: "2025",
@@ -223,7 +245,7 @@ export const certifications: Certification[] = [
     skills: ["Python Programming", "Object-Oriented Programming", "Data Structures", "Algorithms", "Code Optimization"]
   },
   {
-    id: "11",
+    id: "13",
     title: "Understanding Machine Learning",
     issuer: "Data Camp",
     date: "2025",
