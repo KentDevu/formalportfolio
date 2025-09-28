@@ -48,25 +48,6 @@ export const projects: Project[] = [
     liveUrl: "https://fit-up-dun.vercel.app/",
     githubUrl: "https://github.com/kentdevu/fitup",
     featured: true
-  },
-  {
-    id: "2", 
-    title: "E-Commerce Platform",
-    description: "Modern e-commerce solution with real-time inventory, payment processing, and analytics dashboard.",
-    image: "/project-2.jpg",
-    technologies: ["Next.js", "Stripe", "Prisma", "PostgreSQL", "Tailwind CSS"],
-    liveUrl: "https://your-ecommerce.com",
-    githubUrl: "https://github.com/yourusername/ecommerce",
-    featured: true
-  },
-  {
-    id: "3",
-    title: "Data Visualization Dashboard",
-    description: "Interactive dashboard for data analysis with real-time charts and customizable widgets.",
-    image: "/project-3.jpg",
-    technologies: ["React", "D3.js", "Python", "FastAPI", "Redis"],
-    liveUrl: "https://your-dashboard.com",
-    featured: false
   }
 ];
 
