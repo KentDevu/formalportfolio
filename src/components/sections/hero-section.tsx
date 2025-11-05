@@ -7,7 +7,6 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { profile } from '@/data/portfolio-data'
-import Aurora from '@/components/ui/aurora'
 import RotatingText from '@/components/ui/rotating-text'
 
 export function HeroSection() {

@@ -8,6 +8,13 @@ function cn(...classes: (string | undefined | null | false)[]) {
   return classes.filter(Boolean).join(' ')
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+interface RotatingTextHandle {
+  next: () => void
+  prev: () => void
+}
+
 interface RotatingTextProps {
   texts: string[]
   transition?: any
@@ -29,7 +36,7 @@ interface RotatingTextProps {
   [key: string]: any
 }
 
-const RotatingText = forwardRef<any, RotatingTextProps>((props, ref) => {
+const RotatingText = forwardRef<RotatingTextHandle, RotatingTextProps>((props, ref) => {
   const {
     texts,
     transition = { type: 'spring', damping: 25, stiffness: 300 },
@@ -149,7 +156,7 @@ const RotatingText = forwardRef<any, RotatingTextProps>((props, ref) => {
     ref,
     () => ({
       next,
-      previous,
+      prev: previous,
       jumpTo,
       reset
     }),

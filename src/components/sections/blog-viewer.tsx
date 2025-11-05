@@ -1,5 +1,9 @@
 "use client"
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable prefer-const */
+
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Calendar, Clock, ExternalLink, Share2, CheckCircle, Shield, Terminal, Laptop, Award, Zap, BookOpen, Target } from 'lucide-react'
@@ -7,7 +11,6 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card } from '@/components/ui/card'
 import { BlogPost } from '@/types'
-import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 

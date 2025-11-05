@@ -40,7 +40,7 @@ interface LogoLoopProps {
   style?: React.CSSProperties
 }
 
-const useResizeObserver = (callback: () => void, elements: React.RefObject<HTMLElement | null>[], dependencies: any[]) => {
+const useResizeObserver = (callback: () => void, elements: React.RefObject<HTMLElement | null>[], dependencies: unknown[]) => {
   useEffect(() => {
     if (!window.ResizeObserver) {
       const handleResize = () => callback()
@@ -65,7 +65,7 @@ const useResizeObserver = (callback: () => void, elements: React.RefObject<HTMLE
   }, dependencies)
 }
 
-const useImageLoader = (seqRef: React.RefObject<HTMLUListElement | null>, onLoad: () => void, dependencies: any[]) => {
+const useImageLoader = (seqRef: React.RefObject<HTMLUListElement | null>, onLoad: () => void, dependencies: unknown[]) => {
   useEffect(() => {
     const images = seqRef.current?.querySelectorAll('img') ?? []
 

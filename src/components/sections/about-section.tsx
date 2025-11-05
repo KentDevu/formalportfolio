@@ -2,20 +2,12 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Code, Coffee, Heart, Lightbulb, Rocket, Users } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
+import { Code, Coffee, Heart, Lightbulb, Rocket, Users, Shield, Brain, Webhook } from 'lucide-react'
 import LogoLoop from '@/components/ui/logo-loop'
 import SpotlightCard from '@/components/ui/spotlight-card'
 import CountUp from '@/components/ui/count-up'
 import RotatingText from '@/components/ui/rotating-text'
 import { SiReact, SiNextdotjs, SiTypescript, SiNodedotjs, SiPython, SiAmazon, SiDocker, SiPostgresql, SiMongodb, SiGraphql, SiGit } from 'react-icons/si'
-import { Shield, Brain, Webhook } from 'lucide-react'
-
-const skills = [
-  "React", "Next.js", "TypeScript", "Node.js", "Python", "AWS", 
-  "Docker", "PostgreSQL", "MongoDB", "GraphQL", "REST APIs", "Git", "Cybersecurity", "AI"
-]
 
 const techLogos = [
   { node: <SiReact className="text-[#61DAFB]" />, title: "React", href: "https://react.dev" },

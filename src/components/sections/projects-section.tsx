@@ -4,7 +4,6 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ExternalLink, Github, Star, ArrowRight } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { projects } from '@/data/portfolio-data'
@@ -101,7 +100,7 @@ export function ProjectsSection() {
                   </div>
                 </div>
 
-                <CardContent className="p-6">
+                <div className="p-6">
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-purple-600 transition-colors">
                     {project.title}
                   </h3>
@@ -145,7 +144,7 @@ export function ProjectsSection() {
                       </Button>
                     )}
                   </div>
-                </CardContent>
+                </div>
               </SpotlightCard>
             </motion.div>
           ))}
