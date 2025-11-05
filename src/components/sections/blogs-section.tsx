@@ -1,14 +1,29 @@
 "use client"
 
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ExternalLink, Calendar, Clock, ArrowRight, BookOpen } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card'
+import SpotlightCard from '@/components/ui/spotlight-card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { mockBlogPosts } from '@/data/portfolio-data'
+import { BlogViewer } from './blog-viewer'
+import { BlogPost } from '@/types'
 
 export function BlogsSection() {
+  const [selectedBlog, setSelectedBlog] = useState<BlogPost | null>(null)
+  const [isViewerOpen, setIsViewerOpen] = useState(false)
+
+  const openBlogViewer = (post: BlogPost) => {
+    setSelectedBlog(post)
+    setIsViewerOpen(true)
+  }
+
+  const closeBlogViewer = () => {
+    setIsViewerOpen(false)
+    setTimeout(() => setSelectedBlog(null), 300) // Clear after animation
+  }
+
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -43,32 +58,42 @@ export function BlogsSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="mb-12"
+          onClick={() => mockBlogPosts.length > 0 && openBlogViewer(mockBlogPosts[0])}
         >
           {mockBlogPosts.length > 0 && (
-            <Card className="overflow-hidden hover:shadow-2xl transition-all duration-500 group cursor-pointer"
-                  onClick={() => window.open(mockBlogPosts[0].url, '_blank')}>
+            <SpotlightCard 
+              className="overflow-hidden bg-white dark:bg-gray-800 hover:shadow-2xl transition-all duration-500 group cursor-pointer"
+              spotlightColor="rgba(59, 130, 246, 0.2)"
+            >
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* Image */}
-                <div className="relative h-64 lg:h-auto bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900">
+                <div className="relative h-64 lg:h-auto bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-blue-950 dark:via-purple-950 dark:to-pink-950 overflow-hidden">
+                  {/* Animated background elements */}
+                  <div className="absolute inset-0 opacity-30">
+                    <div className="absolute top-10 left-10 w-32 h-32 bg-blue-400 dark:bg-blue-600 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute bottom-10 right-10 w-40 h-40 bg-purple-400 dark:bg-purple-600 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+                    <div className="absolute top-1/2 left-1/2 w-36 h-36 bg-pink-400 dark:bg-pink-600 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+                  </div>
+                  
                   <motion.div
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.05, rotate: 5 }}
                     transition={{ duration: 0.3 }}
-                    className="w-full h-full flex items-center justify-center"
+                    className="relative w-full h-full flex items-center justify-center z-10"
                   >
-                    <BookOpen className="w-20 h-20 text-blue-600 opacity-50" />
+                    <BookOpen className="w-20 h-20 text-blue-600 dark:text-blue-400" />
                   </motion.div>
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-blue-600 text-white">
-                      Featured Post
+                  <div className="absolute top-4 left-4 z-20">
+                    <Badge className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
+                      ⭐ Featured Post
                     </Badge>
                   </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                    <ExternalLink className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent group-hover:from-blue-600/40 transition-all duration-300 flex items-center justify-center z-10">
+                    <ExternalLink className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-lg" />
                   </div>
                 </div>
 
                 {/* Content */}
-                <CardContent className="p-8 flex flex-col justify-center">
+                <div className="p-8 flex flex-col justify-center">
                   <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
                     <div className="flex items-center space-x-1">
                       <Calendar className="w-4 h-4" />
@@ -100,9 +125,9 @@ export function BlogsSection() {
                     Read Full Article
                     <ArrowRight className="w-4 h-4 ml-2 group-hover/button:translate-x-1 transition-transform" />
                   </Button>
-                </CardContent>
+                </div>
               </div>
-            </Card>
+            </SpotlightCard>
           )}
         </motion.div>
 
@@ -115,21 +140,56 @@ export function BlogsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -8 }}
+              onClick={() => openBlogViewer(post)}
             >
-              <Card className="h-full hover:shadow-lg transition-all duration-300 cursor-pointer group"
-                    onClick={() => window.open(post.url, '_blank')}>
-                {/* Image placeholder */}
-                <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800">
-                  <div className="w-full h-full flex items-center justify-center">
-                    <BookOpen className="w-12 h-12 text-gray-400" />
+              <SpotlightCard 
+                className="h-full bg-white dark:bg-gray-800 hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                spotlightColor="rgba(59, 130, 246, 0.12)"
+              >
+                {/* Image placeholder with creative gradients */}
+                <div className={`relative h-48 overflow-hidden ${
+                  index % 3 === 0 
+                    ? 'bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-50 dark:from-cyan-950 dark:via-blue-950 dark:to-indigo-950'
+                    : index % 3 === 1
+                    ? 'bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 dark:from-violet-950 dark:via-purple-950 dark:to-fuchsia-950'
+                    : 'bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 dark:from-emerald-950 dark:via-teal-950 dark:to-cyan-950'
+                }`}>
+                  {/* Animated orbs */}
+                  <div className="absolute inset-0 opacity-20">
+                    <div className={`absolute top-4 right-4 w-20 h-20 rounded-full blur-2xl animate-pulse ${
+                      index % 3 === 0 ? 'bg-blue-400 dark:bg-blue-600' 
+                      : index % 3 === 1 ? 'bg-purple-400 dark:bg-purple-600'
+                      : 'bg-teal-400 dark:bg-teal-600'
+                    }`}></div>
+                    <div className={`absolute bottom-4 left-4 w-24 h-24 rounded-full blur-2xl animate-pulse ${
+                      index % 3 === 0 ? 'bg-indigo-400 dark:bg-indigo-600' 
+                      : index % 3 === 1 ? 'bg-fuchsia-400 dark:bg-fuchsia-600'
+                      : 'bg-emerald-400 dark:bg-emerald-600'
+                    }`} style={{ animationDelay: '1.5s' }}></div>
                   </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                    <ExternalLink className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: -5 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative w-full h-full flex items-center justify-center z-10"
+                  >
+                    <BookOpen className={`w-12 h-12 ${
+                      index % 3 === 0 ? 'text-blue-600 dark:text-blue-400'
+                      : index % 3 === 1 ? 'text-purple-600 dark:text-purple-400'
+                      : 'text-teal-600 dark:text-teal-400'
+                    }`} />
+                  </motion.div>
+                  <div className={`absolute inset-0 bg-gradient-to-t transition-all duration-300 flex items-center justify-center z-10 ${
+                    index % 3 === 0 ? 'from-blue-600/10 group-hover:from-blue-600/30'
+                    : index % 3 === 1 ? 'from-purple-600/10 group-hover:from-purple-600/30'
+                    : 'from-teal-600/10 group-hover:from-teal-600/30'
+                  }`}>
+                    <ExternalLink className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-lg" />
                   </div>
                 </div>
 
-                <CardContent className="p-6">
+                <div className="p-6">
                   <div className="flex items-center space-x-4 text-xs text-gray-500 dark:text-gray-400 mb-3">
                     <div className="flex items-center space-x-1">
                       <Calendar className="w-3 h-3" />
@@ -166,76 +226,20 @@ export function BlogsSection() {
                     Read More
                     <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>
 
-        {/* Blog CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg">
-            <BookOpen className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Want to Read More?
-            </h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
-              I regularly write about web development, technology trends, and share tutorials 
-              on my blog. Follow along for the latest insights and tips!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                onClick={() => window.open('https://your-blog.com', '_blank')}
-                className="bg-blue-600 hover:bg-blue-700"
-              >
-                <BookOpen className="w-4 h-4 mr-2" />
-                Visit My Blog
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => window.open('https://your-blog.com/rss', '_blank')}
-              >
-                Subscribe to RSS
-              </Button>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Newsletter Signup */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-12"
-        >
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl">
-            <div className="text-center">
-              <h3 className="text-2xl font-bold mb-4">
-                Stay Updated
-              </h3>
-              <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-                Get notified when I publish new articles about web development, AI, and technology trends.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-2 rounded-lg text-gray-900 placeholder-gray-500"
-                />
-                <Button className="bg-white text-blue-600 hover:bg-gray-100">
-                  Subscribe
-                </Button>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        {/* Blog Viewer Modal */}
+        {selectedBlog && (
+          <BlogViewer
+            post={selectedBlog}
+            isOpen={isViewerOpen}
+            onClose={closeBlogViewer}
+          />
+        )}
       </div>
     </section>
   )

@@ -3,16 +3,18 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Award, Code, Trophy, Presentation, Calendar, ExternalLink, Shield } from 'lucide-react'
+import { Award, Code, Trophy, Presentation, Calendar, ExternalLink, Shield, ChartNetwork } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { achievements, certifications } from '@/data/portfolio-data'
+import SpotlightCard from '@/components/ui/spotlight-card'
 
 const iconMap = {
   award: Award,
   code: Code,
   trophy: Trophy,
   presentation: Presentation,
+  entrepreneurship: ChartNetwork,
 }
 
 const categoryColors = {
@@ -23,6 +25,7 @@ const categoryColors = {
   'Leadership': 'bg-red-500',
   'Education': 'bg-indigo-500',
   'Professional': 'bg-teal-500',
+  'Entrepreneurship': 'bg-orange-500',
 }
 
 export function AchievementsSection() {
@@ -68,40 +71,44 @@ export function AchievementsSection() {
                   {/* Content */}
                   <div className={`w-full lg:w-5/12 ${isEven ? 'lg:pr-8' : 'lg:pl-8'}`}>
                     <motion.div
-                      whileHover={{ y: -5 }}
+                      whileHover={{ y: -8, scale: 1.02 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <Card className="hover:shadow-xl transition-shadow duration-300 border-l-4 border-l-purple-600">
-                        <CardContent className="p-6">
-                          <div className="flex items-start justify-between mb-4">
-                            <div className="flex items-center space-x-3">
-                              <div className={`w-10 h-10 ${categoryColors[achievement.category as keyof typeof categoryColors] || 'bg-gray-500'} rounded-full flex items-center justify-center`}>
-                                <IconComponent className="w-5 h-5 text-white" />
-                              </div>
-                              <div>
-                                <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                                  {achievement.title}
-                                </h3>
-                                <div className="flex items-center space-x-2 mt-1">
-                                  <Calendar className="w-4 h-4 text-gray-400" />
-                                  <span className="text-sm text-gray-500 dark:text-gray-400">
-                                    {achievement.date}
-                                  </span>
-                                </div>
+                      <SpotlightCard 
+                        className="bg-white dark:bg-gray-800 p-6 border-l-4 border-l-purple-600 shadow-lg hover:shadow-2xl transition-all duration-300"
+                        spotlightColor="rgba(168, 85, 247, 0.15)"
+                      >
+                        <div className="flex items-start justify-between mb-4">
+                          <div className="flex items-center space-x-3">
+                            <motion.div 
+                              className={`w-12 h-12 ${categoryColors[achievement.category as keyof typeof categoryColors] || 'bg-gray-500'} rounded-xl flex items-center justify-center shadow-md`}
+                              whileHover={{ rotate: 360 }}
+                              transition={{ duration: 0.6 }}
+                            >
+                              <IconComponent className="w-6 h-6 text-white" />
+                            </motion.div>
+                            <div>
+                              <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                                {achievement.title}
+                              </h3>
+                              <div className="flex items-center space-x-2 mt-1">
+                                <Calendar className="w-4 h-4 text-purple-500" />
+                                <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
+                                  {achievement.date}
+                                </span>
                               </div>
                             </div>
-                            <Badge 
-                              variant="secondary" 
-                              className="whitespace-nowrap"
-                            >
-                              {achievement.category}
-                            </Badge>
                           </div>
-                          <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            {achievement.description}
-                          </p>
-                        </CardContent>
-                      </Card>
+                          <Badge 
+                            className="whitespace-nowrap bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800"
+                          >
+                            {achievement.category}
+                          </Badge>
+                        </div>
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                          {achievement.description}
+                        </p>
+                      </SpotlightCard>
                     </motion.div>
                   </div>
 
@@ -149,9 +156,12 @@ export function AchievementsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -8, scale: 1.02 }}
               >
-                <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-blue-600">
-                  <CardContent className="p-6">
+                <SpotlightCard 
+                  className="h-full bg-white dark:bg-gray-800 p-6 border-l-4 border-l-blue-600 shadow-lg hover:shadow-2xl transition-all duration-300"
+                  spotlightColor="rgba(59, 130, 246, 0.15)"
+                >
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center space-x-3">
                         <div className="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-700 rounded-lg shadow-md border dark:border-gray-600 overflow-hidden">
@@ -225,14 +235,13 @@ export function AchievementsSection() {
                       {cert.skills.length > 4 && (
                         <Badge 
                           variant="secondary" 
-                          className="text-xs bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400"
+                          className="text-xs bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-700 dark:text-purple-300"
                         >
                           +{cert.skills.length - 4} more
                         </Badge>
                       )}
                     </div>
-                  </CardContent>
-                </Card>
+                </SpotlightCard>
               </motion.div>
             ))}
           </div>
@@ -246,44 +255,6 @@ export function AchievementsSection() {
           viewport={{ once: true }}
           className="mt-20"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { number: "50+", label: "Projects Completed", icon: Code },
-              { number: "5+", label: "Years Experience", icon: Calendar },
-              { number: "11+", label: "Professional Certifications", icon: Award },
-              { number: "1000+", label: "GitHub Contributions", icon: Trophy },
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
-                  <div className="mb-3 flex justify-center">
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
-                      <stat.icon className="w-6 h-6 text-white" />
-                    </div>
-                  </div>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: index * 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
-                      {stat.number}
-                    </div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">
-                      {stat.label}
-                    </div>
-                  </motion.div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
 
         {/* Call to Action */}

@@ -8,6 +8,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { projects } from '@/data/portfolio-data'
+import SpotlightCard from '@/components/ui/spotlight-card'
 
 export function ProjectsSection() {
   const featuredProjects = projects.filter(project => project.featured)
@@ -41,11 +42,14 @@ export function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="group"
+              className="group h-full"
             >
-              <Card className="overflow-hidden hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
+              <SpotlightCard 
+                className="overflow-hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-all duration-500 group-hover:-translate-y-2 h-full flex flex-col"
+                spotlightColor="rgba(168, 85, 247, 0.2)"
+              >
                 {/* Project Image */}
-                <div className="relative overflow-hidden h-64 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900">
+                <div className="relative overflow-hidden h-64 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/50 dark:to-pink-900/50">
                   <motion.div
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.3 }}
@@ -142,7 +146,7 @@ export function ProjectsSection() {
                     )}
                   </div>
                 </CardContent>
-              </Card>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>
@@ -166,34 +170,36 @@ export function ProjectsSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -5 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
                 >
-                  <Card className="h-full hover:shadow-lg transition-shadow duration-300 cursor-pointer"
-                        onClick={() => window.open(project.liveUrl, '_blank')}>
-                    <CardContent className="p-6">
+                  <SpotlightCard 
+                    className="h-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 transition-all duration-300 cursor-pointer"
+                    spotlightColor="rgba(168, 85, 247, 0.12)"
+                  >
+                    <div onClick={() => window.open(project.liveUrl, '_blank')}>
                       <div className="flex items-center justify-between mb-3">
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+                        <h4 className="text-lg font-bold text-gray-900 dark:text-white">
                           {project.title}
                         </h4>
-                        <ExternalLink className="w-5 h-5 text-gray-400 hover:text-purple-600 transition-colors" />
+                        <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-purple-600 transition-colors" />
                       </div>
-                      <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">
+                      <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3 leading-relaxed">
                         {project.description}
                       </p>
-                      <div className="flex flex-wrap gap-1">
+                      <div className="flex flex-wrap gap-2">
                         {project.technologies.slice(0, 3).map((tech) => (
-                          <Badge key={tech} variant="outline" className="text-xs">
+                          <Badge key={tech} variant="outline" className="text-xs font-medium">
                             {tech}
                           </Badge>
                         ))}
                         {project.technologies.length > 3 && (
-                          <Badge variant="outline" className="text-xs">
-                            +{project.technologies.length - 3}
+                          <Badge variant="outline" className="text-xs font-medium bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20">
+                            +{project.technologies.length - 3} more
                           </Badge>
                         )}
                       </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </SpotlightCard>
                 </motion.div>
               ))}
             </div>

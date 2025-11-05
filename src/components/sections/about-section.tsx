@@ -5,10 +5,40 @@ import { motion } from 'framer-motion'
 import { Code, Coffee, Heart, Lightbulb, Rocket, Users } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import LogoLoop from '@/components/ui/logo-loop'
+import SpotlightCard from '@/components/ui/spotlight-card'
+import CountUp from '@/components/ui/count-up'
+import RotatingText from '@/components/ui/rotating-text'
+import { SiReact, SiNextdotjs, SiTypescript, SiNodedotjs, SiPython, SiAmazon, SiDocker, SiPostgresql, SiMongodb, SiGraphql, SiGit } from 'react-icons/si'
+import { Shield, Brain, Webhook } from 'lucide-react'
 
 const skills = [
   "React", "Next.js", "TypeScript", "Node.js", "Python", "AWS", 
   "Docker", "PostgreSQL", "MongoDB", "GraphQL", "REST APIs", "Git", "Cybersecurity", "AI"
+]
+
+const techLogos = [
+  { node: <SiReact className="text-[#61DAFB]" />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs className="text-black dark:text-white" />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiTypescript className="text-[#3178C6]" />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+  { node: <SiNodedotjs className="text-[#339933]" />, title: "Node.js", href: "https://nodejs.org" },
+  { node: <SiPython className="text-[#3776AB]" />, title: "Python", href: "https://www.python.org" },
+  { node: <SiAmazon className="text-[#FF9900]" />, title: "AWS", href: "https://aws.amazon.com" },
+  { node: <SiDocker className="text-[#2496ED]" />, title: "Docker", href: "https://www.docker.com" },
+  { node: <SiPostgresql className="text-[#4169E1]" />, title: "PostgreSQL", href: "https://www.postgresql.org" },
+  { node: <SiMongodb className="text-[#47A248]" />, title: "MongoDB", href: "https://www.mongodb.com" },
+  { node: <SiGraphql className="text-[#E10098]" />, title: "GraphQL", href: "https://graphql.org" },
+  { node: <Webhook className="text-purple-600 dark:text-purple-400 w-12 h-12" />, title: "REST APIs", href: "https://restfulapi.net" },
+  { node: <SiGit className="text-[#F05032]" />, title: "Git", href: "https://git-scm.com" },
+  { node: <Shield className="text-blue-600 dark:text-blue-400 w-12 h-12" />, title: "Cybersecurity", href: "https://www.cybersecurity.com" },
+  { node: <Brain className="text-pink-600 dark:text-pink-400 w-12 h-12" />, title: "AI", href: "https://ai.google" },
+]
+
+const passions = [
+  "Building Scalable Systems",
+  "Cybersecurity Research",
+  "AI & Machine Learning",
+  "Open Source Contributing"
 ]
 
 const interests = [
@@ -83,36 +113,67 @@ export function AboutSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-              Technical Skills
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+              <span>I'm passionate about</span>
+              <RotatingText
+                texts={passions}
+                mainClassName="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg inline-flex text-xl font-bold"
+                staggerFrom="last"
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "-120%" }}
+                staggerDuration={0.025}
+                splitLevelClassName="overflow-hidden"
+                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                rotationInterval={3000}
+              />
             </h3>
-            <div className="flex flex-wrap gap-3 mb-8">
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={skill}
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Badge 
-                    variant="secondary" 
-                    className="px-4 py-2 text-sm hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors cursor-default"
-                  >
-                    {skill}
-                  </Badge>
-                </motion.div>
-              ))}
+            
+            <div className="mb-8 bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+              <h4 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-4 uppercase tracking-wide">
+                Technologies & Skills I Work With
+              </h4>
+              <div className="relative" style={{ height: '80px' }}>
+                <LogoLoop
+                  logos={techLogos}
+                  speed={40}
+                  direction="left"
+                  logoHeight={48}
+                  gap={56}
+                  pauseOnHover
+                  scaleOnHover
+                  fadeOut
+                  ariaLabel="Technology stack and skills"
+                />
+              </div>
             </div>
 
-            <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-lg border border-purple-200 dark:border-purple-800">
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                💡 Fun Fact
+            <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-xl border border-purple-200 dark:border-purple-800 shadow-lg">
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                💡 By The Numbers
               </h4>
-              <p className="text-gray-600 dark:text-gray-400">
-                I've written over 50,000 lines of code this year and contributed to 
-                15+ open-source projects. I also love experimenting with AI and have 
-                built several machine learning models for personal projects!
+              <div className="grid grid-cols-3 gap-4 mb-4">
+                <div className="text-center">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    <CountUp to={50000} separator="," duration={2.5} />+
+                  </div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Lines of Code</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    <CountUp to={15} duration={2} />+
+                  </div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">OSS Projects</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    <CountUp to={5} duration={1.5} />+
+                  </div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Years Exp</div>
+                </div>
+              </div>
+              <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
+                I love experimenting with AI and building machine learning models!
               </p>
             </div>
           </motion.div>
@@ -136,23 +197,28 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -8, scale: 1.02 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300">
-                  <CardContent className="p-6 text-center">
-                    <div className="mb-4 flex justify-center">
-                      <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
-                        <interest.icon className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                      {interest.title}
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">
-                      {interest.description}
-                    </p>
-                  </CardContent>
-                </Card>
+                <SpotlightCard 
+                  className="h-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 text-center transition-all duration-300"
+                  spotlightColor="rgba(147, 51, 234, 0.15)"
+                >
+                  <div className="mb-4 flex justify-center">
+                    <motion.div 
+                      className="w-14 h-14 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center shadow-lg"
+                      whileHover={{ rotate: 360, scale: 1.1 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <interest.icon className="w-7 h-7 text-white" />
+                    </motion.div>
+                  </div>
+                  <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                    {interest.title}
+                  </h4>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                    {interest.description}
+                  </p>
+                </SpotlightCard>
               </motion.div>
             ))}
           </div>

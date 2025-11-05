@@ -7,6 +7,8 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { profile } from '@/data/portfolio-data'
+import Aurora from '@/components/ui/aurora'
+import RotatingText from '@/components/ui/rotating-text'
 
 export function HeroSection() {
   const scrollToNext = () => {
@@ -14,14 +16,26 @@ export function HeroSection() {
     nextSection?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const roles = [
+    "Full Stack Developer",
+    "Cybersecurity Enthusiast", 
+    "AI Engineer",
+    "Problem Solver",
+    "Automation Expert",
+    "Cloud Specialist"
+  ]
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Animation */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-20 -right-16 w-60 h-60 md:w-80 md:h-80 md:-top-40 md:-right-32 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
         <div className="absolute -bottom-20 -left-16 w-60 h-60 md:w-80 md:h-80 md:-bottom-40 md:-left-32 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
         <div className="absolute top-20 left-20 w-60 h-60 md:w-80 md:h-80 md:top-40 md:left-40 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
       </div>
+      
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/60 to-white/80 dark:from-gray-900/80 dark:via-gray-900/60 dark:to-gray-900/80 z-0"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center space-y-8">
@@ -49,13 +63,25 @@ export function HeroSection() {
           >
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight px-4">
               Hi, I&apos;m{' '}
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent inline-block">
+              <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent inline-block animate-gradient">
                 {profile.name}
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              {profile.title}
-            </p>
+            <div className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto flex flex-wrap items-center justify-center gap-2">
+              <span>A</span>
+              <RotatingText
+                texts={roles}
+                mainClassName="px-4 py-2 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white rounded-xl inline-flex font-bold shadow-lg"
+                staggerFrom="first"
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "-120%" }}
+                staggerDuration={0.02}
+                splitLevelClassName="overflow-hidden"
+                transition={{ type: "spring", damping: 35, stiffness: 450 }}
+                rotationInterval={2500}
+              />
+            </div>
           </motion.div>
 
           {/* Bio */}

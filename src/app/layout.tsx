@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/common/theme-provider";
 import { Navigation } from "@/components/common/navigation";
 import { Footer } from "@/components/common/footer";
+import Aurora from "@/components/ui/aurora";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -38,6 +39,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Aurora 
+            colorStops={['#3A29FF', '#FF94B4', '#FF3232']}
+            amplitude={1.2}
+            blend={0.6}
+            speed={0.4}
+          />
           <div className="relative flex min-h-screen flex-col">
             <Navigation />
             <main className="flex-1">

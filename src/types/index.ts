@@ -7,6 +7,11 @@ export interface Project {
   liveUrl: string;
   githubUrl?: string;
   featured: boolean;
+  // Optional extended fields for richer project entries
+  details?: string;
+  features?: string[];
+  responsibilities?: string[];
+  outcome?: string;
 }
 
 export interface Achievement {
@@ -40,6 +45,7 @@ export interface BlogPost {
   tags: string[];
   url: string;
   image?: string;
+  content?: string; // Full markdown/HTML content for in-site viewing
 }
 
 export interface Contact {
