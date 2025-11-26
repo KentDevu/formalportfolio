@@ -51,6 +51,34 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/kentdevu/fitup",
     featured: true
   },
+  
+  {
+    id: "1",
+    title: "Auralis",
+    description: "Automated Phishing Detection Dashboard and workflow built with n8n and a custom Phishing Detection API.",
+    image: auralis.src,
+    technologies: ["n8n", "Node.js", "Express", "Gmail API", "OAuth 2.0", "PostgreSQL", "REST APIs"],
+    liveUrl: "https://phishing-detection-dashboard.vercel.app/",
+    githubUrl: "https://github.com/KentDevu/PhishingDetection-Dashboard",
+    featured: true,
+      details: `Auralis is an automated phishing detection system comprised of an n8n-based orchestration workflow, a custom Phishing Detection API for analysis, and logging endpoints that persist verified detection results.`,
+    features: [
+      "Automated Gmail message retrieval (IMAP/REST)",
+      "n8n workflow orchestration with recursive pagination handling",
+      "Custom Phishing Detection API for threat analysis",
+      "Secure Google OAuth 2.0 token refresh implementation",
+      "Logging API for result verification and deduplication",
+      "Retry, checksum verification and retry-on-failure logic for reliability"
+    ],
+    responsibilities: [
+      "Designed and implemented the n8n workflow for automated email retrieval and processing",
+      "Integrated Gmail API with OAuth 2.0 and secure token refresh flow",
+      "Developed custom Phishing Detection API and integrated it into the workflow",
+      "Implemented logging and verification endpoints to ensure data accuracy",
+      "Handled pagination, rate limiting, and fault tolerance within the automation"
+    ],
+    outcome: `Delivered a self-recovering automation that processed incoming Gmail messages, performed threat analysis via the custom API, and stored detection results with verified accuracy. The system handled token refreshes, paginated inboxes, rate limiting, and transient network failures without manual supervision.`
+  }
 ];
 
 export const achievements: Achievement[] = [
