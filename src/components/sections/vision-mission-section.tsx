@@ -210,17 +210,17 @@ export function VisionMissionSection() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  year: "2019",
+                  year: "18",
                   title: "The Beginning",
                   description: "Started my journey in web development with a passion for creating digital solutions."
                 },
                 {
-                  year: "2021",
+                  year: "20",
                   title: "Growth & Learning",
-                  description: "Expanded skills in modern frameworks and began contributing to open-source projects."
+                  description: "Expanded skills in modern frameworks and began creating projects for clients."
                 },
                 {
-                  year: "2024",
+                  year: "21",
                   title: "Innovation & AI",
                   description: "Embracing AI technologies and building intelligent applications for the future."
                 }

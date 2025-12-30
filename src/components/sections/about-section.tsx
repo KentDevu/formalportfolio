@@ -73,8 +73,8 @@ export function AboutSection() {
           >
             <div className="prose prose-lg dark:prose-invert">
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                With over 5 years of experience in web development, I've had the privilege of working 
-                on diverse projects ranging from e-commerce platforms to AI-powered applications. 
+                With over 3 years of experience in web development, I've had the privilege of working 
+                on diverse projects ranging from Inventory Management System platforms to AI-powered applications. 
                 My journey began with a curiosity about how websites work, and it has evolved into 
                 a passion for building scalable, user-centric solutions.
               </p>
@@ -155,17 +155,17 @@ export function AboutSection() {
                   <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                     <CountUp to={15} duration={2} />+
                   </div>
-                  <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">OSS Projects</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Projects</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                    <CountUp to={5} duration={1.5} />+
+                    <CountUp to={3} duration={1.5} />+
                   </div>
                   <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Years Exp</div>
                 </div>
               </div>
               <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-                I love experimenting with AI and building machine learning models!
+                I love experimenting with AI technologies to create smarter applications that enhance user experiences.
               </p>
             </div>
           </motion.div>
