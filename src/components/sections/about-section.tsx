@@ -88,9 +88,8 @@ export function AboutSection() {
                 won the Base PH Hackathon, and maintain a <span className="font-semibold text-purple-600 dark:text-purple-400">Top 4% global ranking on TryHackMe</span>.
               </p>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Currently pursuing my BS in Computer Science at Gordon College (graduating July 2026), 
                 I'm an active AWS Cloud Club committee member, DataCamp Scholar, and contributor 
-                to the cybersecurity community through technical blogs and open-source work.
+                to the cybersecurity community through technical blogs.
               </p>
             </div>
 
