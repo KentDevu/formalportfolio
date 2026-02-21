@@ -6,10 +6,10 @@ import auralis from "@/assets/auralis.png"
 
 export const profile: Profile = {
   name: "Kent Harold Belen",
-  title: "Full Stack Developer, Cloud Specialist & Cybersecurity Enthusiast",
-  bio: "Passionate developer with expertise in modern web technologies, cloud computing, and cybersecurity. I love building scalable applications and exploring cutting-edge technologies.",
+  title: "Software Engineer | Tech Lead | Cybersecurity Specialist",
+  bio: "Tech Lead at Catalyx Solutions and Software Engineer at Lujo PH. I architect security automation platforms, build scalable full-stack applications, and bridge the gap between software engineering and cybersecurity. Top 4% globally on TryHackMe, Base PH Hackathon Winner, and AWS Cloud Club committee member — I ship products that solve real problems.",
   avatar: dp.src,
-  location: "Dinalupihan, Bataan",
+  location: "Olongapo, Philippines",
   email: "belenkentharold@gmail.com",
   socialLinks: [
     {
@@ -42,14 +42,92 @@ export const profile: Profile = {
 
 export const projects: Project[] = [
   {
+    id: "1",
+    title: "Auralis",
+    description: "An end-to-end automated phishing detection & threat intelligence platform that reduced manual phishing analysis workload by 70–75%. Features automated email ingestion, multi-source CTI aggregation, AI-based verdict generation, and an interactive SOC-style analyst dashboard.",
+    image: auralis.src,
+    technologies: ["AI", "Security Automation", "n8n", "VirusTotal API", "Gmail API", "IMAP", "SOC Dashboard"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/kentdevu",
+    featured: true,
+    details: "Presented at the First AI Regional Conference (GDG) at Holy Angel University.",
+    features: [
+      "Automated email ingestion via IMAP and Gmail API",
+      "Multi-source CTI aggregation (VirusTotal, URL/attachment analysis)",
+      "AI-driven phishing verdict and risk scoring",
+      "Interactive analyst dashboard for threat visualization",
+      "n8n workflow orchestration for email triage"
+    ],
+    outcome: "Reduced manual phishing analysis workload by 70–75% through AI-assisted automation."
+  },
+  {
     id: "2",
-    title: "Fitup",
-    description: "An exercise planner and tracker application powered by AI.",
+    title: "Avitus IMS",
+    description: "A nationwide centralized inventory management system supporting multiple Avitus branches across the Philippines with real-time tracking, stock movement logging, and branch-level visibility.",
+    image: "/assets/icon/avitus.png",
+    technologies: ["Django", "Next.js", "MySQL", "REST API", "MUI", "TanStack"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/kentdevu",
+    featured: true,
+    features: [
+      "Real-time inventory tracking across branches",
+      "Stock movement logging and branch-level visibility",
+      "Scalable REST API for products, suppliers & transactions",
+      "Responsive admin dashboard with advanced reporting"
+    ],
+    outcome: "Improved inventory accuracy and operational efficiency across multiple branches nationwide."
+  },
+  {
+    id: "3",
+    title: "FitUp",
+    description: "An AI-powered fitness planner that generates structured workout programs based on user goals, body metrics, and experience level. Features progress tracking, analytics, and adaptive recommendations.",
     image: fitup.src,
     technologies: ["React", "TypeScript", "Node.js", "Groq API", "PostgreSQL"],
     liveUrl: "https://fit-up-dun.vercel.app/",
     githubUrl: "https://github.com/kentdevu/fitup",
-    featured: true
+    featured: true,
+    features: [
+      "AI-driven personalized workout program generation",
+      "Progress tracking and fitness analytics",
+      "Adaptive recommendations based on user performance",
+      "Natural language reasoning via OpenAI API"
+    ],
+    outcome: "Increased user engagement by 40% through personalized AI recommendations."
+  },
+  {
+    id: "4",
+    title: "AckAI",
+    description: "A real-time AI legal assistance platform built for the AWS Cloud Club PH Innovation Cup 2025 hackathon. Features conversational AI, intelligent document retrieval, and secure cloud-native architecture.",
+    image: "/assets/icon/ackai-placeholder.svg",
+    technologies: ["Agora AI", "React", "Express", "DynamoDB", "Amazon Kendra", "S3"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/kentdevu",
+    featured: false,
+    features: [
+      "Real-time AI conversational legal assistant",
+      "Intelligent document retrieval via Amazon Kendra",
+      "Scalable backend with DynamoDB and S3",
+      "Secure context storage and search"
+    ],
+    outcome: "Built and presented at AWS Cloud Club PH Innovation Cup 2025."
+  },
+  {
+    id: "5",
+    title: "TryHackMe Labs",
+    description: "Completed extensive hands-on security labs covering SIEM, threat detection, incident response, and privilege escalation. Consistently ranked in the Top 4% globally.",
+    image: "/assets/badge/tryhackme_logo.jpg",
+    technologies: ["SIEM", "Threat Detection", "Incident Response", "Privilege Escalation", "SOC"],
+    liveUrl: "https://tryhackme.com/p/belenkentharold",
+    featured: false
+  },
+  {
+    id: "6",
+    title: "Security Tools Practice",
+    description: "Conducted penetration testing, vulnerability assessments, and intelligence-driven investigations using industry-standard offensive and defensive security tools.",
+    image: "/assets/icon/security-placeholder.svg",
+    technologies: ["Burp Suite", "Wireshark", "Metasploit", "Hashcat", "MISP", "OpenCTI"],
+    liveUrl: "#",
+    featured: false
   }
 ];
 
@@ -72,40 +150,56 @@ export const achievements: Achievement[] = [
   },
   {
     id: "3",
-    title: "Kloudtech Internship",
-    description: "Started internship at Kloudtech, gaining hands-on experience in cloud technologies and enterprise solutions.",
+    title: "Software Engineer Intern at Kloudtech",
+    description: "Developed high-performance, secure backend and frontend components for SaaS applications. Optimized CI/CD workflows, reducing deployment times by 20%.",
     date: "March 2025",
     icon: "code",
     category: "Professional"
   },
   {
     id: "4",
-    title: "TryHackMe Trainee",
-    description: "Became a TryHackMe trainee, diving into cybersecurity fundamentals and hands-on ethical hacking challenges.",
+    title: "AWS Cloud Club PH Innovation Cup 2025",
+    description: "Built AckAI — a real-time AI legal assistance platform using Agora AI, Amazon Kendra, DynamoDB, and S3 for the national hackathon.",
+    date: "June 2025",
+    icon: "trophy",
+    category: "Competition"
+  },
+  {
+    id: "5",
+    title: "First AI Regional Conference Hackathon",
+    description: "Presented Auralis — an automated phishing detection platform at the GDG First AI Regional Conference at Holy Angel University.",
+    date: "August 2025",
+    icon: "presentation",
+    category: "Competition"
+  },
+  {
+    id: "6",
+    title: "Top 4% Global on TryHackMe",
+    description: "Achieved a consistent Top 4% global ranking on TryHackMe through hands-on SIEM, threat detection, incident response, and privilege escalation labs.",
     date: "August 2025",
     icon: "trophy",
     category: "Education"
   },
   {
-    id: "5",
-    title: "Cofound Catalyx Solutions",
-    description: "Cofounded Catalyx Solutions, a startup focused on delivering innovative solutions.",
+    id: "7",
+    title: "Cofounded Catalyx Solutions — Tech Lead",
+    description: "Cofounded Catalyx Solutions and took on the Tech Lead role. Architected security automation platforms improving phishing detection efficiency by 70% and engineered scalable APIs cutting manual triage by 10 hrs/week.",
     date: "October 2025",
     icon: "entrepreneurship",
     category: "Entrepreneurship"
   },
   {
-    id: "6",
-    title: "CTO at Catalyx Solutions",
-    description: "Appointed as Chief Technology Officer (CTO) at Catalyx Solutions, leading the technology strategy and development.",
+    id: "8",
+    title: "Winner — Base PH Hackathon",
+    description: "Won the Base PH Hackathon, demonstrating innovation and technical excellence in a competitive national event.",
     date: "October 2025",
-    icon: "award",
-    category: "Leadership"
+    icon: "trophy",
+    category: "Competition"
   },
   {
-    id: "7",
+    id: "9",
     title: "Software Engineer at Lujo PH",
-    description: "Started working as a Software Engineer at Lujo PH, contributing on development of systems for the clients.",
+    description: "Developing and maintaining scalable web applications and backend services. Building optimized REST APIs for improved system reliability and performance across production workloads.",
     date: "November 2025",
     icon: "code",
     category: "Professional"
@@ -265,8 +359,8 @@ export const certifications: Certification[] = [
 ];
 
 export const visionMission = {
-  vision: "To leverage technology as a force for positive change, creating innovative solutions that enhance human capabilities and improve lives globally.",
-  mission: "Building scalable, user-centric applications while staying at the forefront of emerging technologies. I strive to write clean, maintainable code and foster collaborative development environments."
+  vision: "To bridge the gap between software engineering and cybersecurity, building intelligent systems that protect and empower organizations at scale — while mentoring the next generation of engineers.",
+  mission: "Architecting secure, scalable applications and AI-driven automation that solve real-world problems. From threat intelligence platforms to nationwide inventory systems, I ship products that make measurable impact — with clean code, 99.9% uptime, and relentless curiosity."
 };
 
 // This would typically come from an external API

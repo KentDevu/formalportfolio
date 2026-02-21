@@ -20,7 +20,7 @@ const categoryColors = {
   'Certification': 'bg-blue-500',
   'Speaking': 'bg-green-500',
   'Open Source': 'bg-purple-500',
-  'Competition': 'bg-yellow-500',
+  'Competition': 'bg-amber-500',
   'Leadership': 'bg-red-500',
   'Education': 'bg-indigo-500',
   'Professional': 'bg-teal-500',

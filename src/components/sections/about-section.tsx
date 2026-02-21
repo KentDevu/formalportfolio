@@ -2,12 +2,12 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Code, Coffee, Heart, Lightbulb, Rocket, Users, Shield, Brain, Webhook } from 'lucide-react'
+import { Code, Lightbulb, Rocket, Users, Shield, Brain, Webhook } from 'lucide-react'
 import LogoLoop from '@/components/ui/logo-loop'
 import SpotlightCard from '@/components/ui/spotlight-card'
 import CountUp from '@/components/ui/count-up'
 import RotatingText from '@/components/ui/rotating-text'
-import { SiReact, SiNextdotjs, SiTypescript, SiNodedotjs, SiPython, SiAmazon, SiDocker, SiPostgresql, SiMongodb, SiGraphql, SiGit } from 'react-icons/si'
+import { SiReact, SiNextdotjs, SiTypescript, SiNodedotjs, SiPython, SiAmazon, SiDocker, SiPostgresql, SiMongodb, SiDjango, SiGit, SiMysql, SiAngular, SiSvelte, SiTailwindcss } from 'react-icons/si'
 
 const techLogos = [
   { node: <SiReact className="text-[#61DAFB]" />, title: "React", href: "https://react.dev" },
@@ -15,31 +15,35 @@ const techLogos = [
   { node: <SiTypescript className="text-[#3178C6]" />, title: "TypeScript", href: "https://www.typescriptlang.org" },
   { node: <SiNodedotjs className="text-[#339933]" />, title: "Node.js", href: "https://nodejs.org" },
   { node: <SiPython className="text-[#3776AB]" />, title: "Python", href: "https://www.python.org" },
+  { node: <SiDjango className="text-[#092E20]" />, title: "Django", href: "https://www.djangoproject.com" },
   { node: <SiAmazon className="text-[#FF9900]" />, title: "AWS", href: "https://aws.amazon.com" },
   { node: <SiDocker className="text-[#2496ED]" />, title: "Docker", href: "https://www.docker.com" },
   { node: <SiPostgresql className="text-[#4169E1]" />, title: "PostgreSQL", href: "https://www.postgresql.org" },
+  { node: <SiMysql className="text-[#4479A1]" />, title: "MySQL", href: "https://www.mysql.com" },
   { node: <SiMongodb className="text-[#47A248]" />, title: "MongoDB", href: "https://www.mongodb.com" },
-  { node: <SiGraphql className="text-[#E10098]" />, title: "GraphQL", href: "https://graphql.org" },
+  { node: <SiTailwindcss className="text-[#06B6D4]" />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+  { node: <SiAngular className="text-[#DD0031]" />, title: "Angular", href: "https://angular.io" },
+  { node: <SiSvelte className="text-[#FF3E00]" />, title: "Svelte", href: "https://svelte.dev" },
   { node: <Webhook className="text-purple-600 dark:text-purple-400 w-12 h-12" />, title: "REST APIs", href: "https://restfulapi.net" },
   { node: <SiGit className="text-[#F05032]" />, title: "Git", href: "https://git-scm.com" },
-  { node: <Shield className="text-blue-600 dark:text-blue-400 w-12 h-12" />, title: "Cybersecurity", href: "https://www.cybersecurity.com" },
-  { node: <Brain className="text-pink-600 dark:text-pink-400 w-12 h-12" />, title: "AI", href: "https://ai.google" },
+  { node: <Shield className="text-blue-600 dark:text-blue-400 w-12 h-12" />, title: "Cybersecurity", href: "https://tryhackme.com" },
+  { node: <Brain className="text-pink-600 dark:text-pink-400 w-12 h-12" />, title: "AI / ML", href: "https://ai.google" },
 ]
 
 const passions = [
-  "Building Scalable Systems",
-  "Cybersecurity Research",
-  "AI & Machine Learning",
-  "Open Source Contributing"
+  "Security Automation",
+  "Threat Intelligence",
+  "AI-Powered Solutions",
+  "Scalable Architecture"
 ]
 
 const interests = [
-  { icon: Code, title: "Clean Code", description: "Writing maintainable and scalable code" },
-  { icon: Lightbulb, title: "Innovation", description: "Exploring cutting-edge technologies" },
-  { icon: Users, title: "Collaboration", description: "Working with diverse, talented teams" },
-  { icon: Rocket, title: "Performance", description: "Building fast, efficient applications" },
-  { icon: Coffee, title: "Learning", description: "Continuous growth and improvement" },
-  { icon: Heart, title: "CyberSecurity Focus", description: "Cybersecurity is my passion" },
+  { icon: Shield, title: "Security First", description: "Building with secure coding practices and threat-aware architecture" },
+  { icon: Brain, title: "AI Automation", description: "Leveraging AI to automate threat detection and decision-making" },
+  { icon: Rocket, title: "Ship Fast", description: "CI/CD pipelines, 20% faster deploys, 99.9% uptime" },
+  { icon: Code, title: "Full Stack", description: "End-to-end: React, Next.js, Django, Express, PostgreSQL" },
+  { icon: Users, title: "Tech Leadership", description: "Leading engineering teams and mentoring developers" },
+  { icon: Lightbulb, title: "Hackathon Builder", description: "Base PH Winner, AWS Innovation Cup, GDG Conference" },
 ]
 
 export function AboutSection() {
@@ -73,20 +77,20 @@ export function AboutSection() {
           >
             <div className="prose prose-lg dark:prose-invert">
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                With over 3 years of experience in web development, I've had the privilege of working 
-                on diverse projects ranging from Inventory Management System platforms to AI-powered applications. 
-                My journey began with a curiosity about how websites work, and it has evolved into 
-                a passion for building scalable, user-centric solutions.
+                I'm a <span className="font-semibold text-purple-600 dark:text-purple-400">Tech Lead at Catalyx Solutions</span> and <span className="font-semibold text-purple-600 dark:text-purple-400">Software Engineer at Lujo PH</span>, 
+                where I architect security automation platforms, build scalable APIs, and manage cloud infrastructure 
+                ensuring 99.9% uptime. My work at Catalyx improved phishing detection efficiency by 70% and cut manual threat triage by 10 hours per week.
               </p>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                I believe in the power of technology to solve real-world problems and improve lives. 
-                Whether it's optimizing performance, enhancing user experience, or integrating cutting-edge 
-                AI capabilities, I'm always looking for ways to push the boundaries of what's possible.
+                From building <span className="font-semibold">nationwide inventory management systems</span> to 
+                <span className="font-semibold"> AI-powered threat intelligence platforms</span>, I thrive at the intersection of 
+                full-stack engineering and cybersecurity. I've presented at the GDG First AI Regional Conference, 
+                won the Base PH Hackathon, and maintain a <span className="font-semibold text-purple-600 dark:text-purple-400">Top 4% global ranking on TryHackMe</span>.
               </p>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                When I'm not coding, you'll find me contributing to open-source projects, writing 
-                technical articles, or exploring new technologies. I'm also passionate about mentoring 
-                junior developers and sharing knowledge with the community.
+                Currently pursuing my BS in Computer Science at Gordon College (graduating July 2026), 
+                I'm an active AWS Cloud Club committee member, DataCamp Scholar, and contributor 
+                to the cybersecurity community through technical blogs and open-source work.
               </p>
             </div>
 

@@ -16,12 +16,12 @@ export function HeroSection() {
   }
 
   const roles = [
-    "Full Stack Developer",
-    "Cybersecurity Enthusiast", 
-    "AI Engineer",
-    "Problem Solver",
-    "Automation Expert",
-    "Cloud Specialist"
+    "Tech Lead",
+    "Software Engineer", 
+    "Security Specialist",
+    "AI Automation Builder",
+    "Hackathon Winner",
+    "Cloud Architect"
   ]
 
   return (
