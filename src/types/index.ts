@@ -7,6 +7,7 @@ export interface Project {
   liveUrl: string;
   githubUrl?: string;
   featured: boolean;
+  highlight?: boolean; // Marks project as a flagship/highlighted entry
   // Optional extended fields for richer project entries
   details?: string;
   features?: string[];

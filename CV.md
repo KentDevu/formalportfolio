@@ -46,36 +46,55 @@ discrepancies.
 - Developed a responsive admin dashboard with Next.js, MUI, and TanStack for efficient inventory monitoring and
 reporting.
 - Improved inventory accuracy and operational efficiency by enabling data-driven stock decisions across branches.
+ChatFlow AI – Facebook Auto-Reply & Messenger Chatbot SaaS n8n, Meta Graph API, Next.js, Gemini AI
+- Architected and launched a multi-tenant SaaS platform enabling automated replies for Facebook Messenger and post
+    comments.
+- Integrated Meta Graph API for webhook-based real-time message and comment ingestion.
+- Designed AI-powered conversational flows using Gemini as an intelligent agent for contextual and human-like responses.
+- Orchestrated automation workflows via n8n for lead capture, CRM sync, escalation logic, and smart triggers.
+- Built a scalable Next.js admin dashboard for bot configuration, analytics, and conversation monitoring.
+- Implemented webhook verification, rate limiting, and token security for production-grade reliability.
+PhishGuard – Phishing Detection & Threat Intelligence SaaS AWS Lambda, DynamoDB, R2, CTI Integrations
+- Re-architected Auralis into a serverless SaaS platform using AWS Lambda microservices for scalable threat processing.
+    - Implemented automated email ingestion via Gmail API and IMAP (IDLE) for real-time phishing analysis.
+    - Aggregated intelligence from VirusTotal, AbuseIPDB, IPQualityScore, Shodan, URLhaus, and OTX to enrich URLs,
+       domains, and IPs.
+    - Leveraged AI-based analysis to correlate multi-source threat intelligence and produce unified verdicts with confidence
+       scoring.
+    - Utilized DynamoDB for structured threat storage, Cloudflare R2 for artifact storage, and Vercel for frontend deployment.
+    - Designed modular microservice architecture to support horizontal scaling and tenant-based isolation.
+
+
+- Reduced manual phishing triage by over 80% through automated multi-source CTI aggregation and AI-assisted decision
+    logic.
 Auralis – Automated Phishing Detection & Threat Intelligence PlatformAI, Security Automation, SOC Dashboard
 - Designed and developed an end-to-end automated phishing detection platform presented at the First AI Regional
-    Conference (GDG) at Holy Angel University.
+Conference (GDG) at Holy Angel University.
 - Implemented automated email ingestion via IMAP and Gmail API, orchestrated with n8n workflows to triage incoming
-emails.
+    emails.
 - Built a phishing detection API that aggregates responses from multiple CTI sources, including VirusTotal, for URL and
-attachment analysis.
+    attachment analysis.
 - Applied AI-based analysis to interpret CTI responses, correlate indicators, and generate a final phishing verdict and risk
-score.
+    score.
 - Developed structured verdict logic to support SOC-style decision-making and reduce false positives.
 - Designed an interactive analyst dashboard for threat visualization, filtering, and investigation workflows.
 - Reduced manual phishing analysis workload by 70–75% through AI-assisted automation and centralized threat
-visibility.
+    visibility.
 FitUp – AI-Powered Exercise Planner React, TypeScript, Node.js, Groq API, PostgreSQL
 - Engineered an AI-driven fitness planner that generates structured workout programs based on user goals, body metrics,
-    and experience level.
+and experience level.
 - Built progress tracking, analytics, and adaptive recommendations, increasing user engagement by 40%.
 - Integrated OpenAI API for natural language reasoning and personalized program generation.
 AckAI – AI Legal Assistance Platform Agora AI, DynamoDB, Kendra, S3, React, Express
-
-
 - Developed a real-time AI legal assistant platform for the AWS Cloud Club PH Innovation Cup 2025 hackathon.
-    - Integrated Agora Conversational AI and Amazon Kendra for intelligent document retrieval.
-    - Architected a scalable backend using Express, DynamoDB, and S3 for secure context storage and search.
-    TryHackMe Labs Cybersecurity, SOC
+- Integrated Agora Conversational AI and Amazon Kendra for intelligent document retrieval.
+- Architected a scalable backend using Express, DynamoDB, and S3 for secure context storage and search.
+TryHackMe Labs Cybersecurity, SOC
 - Completed hands-on security labs covering SIEM, threat detection, incident response, and privilege escalation.
-    - Ranked consistently in the Top 4% globally.
-    Security Tools Practice Offensive & Defensive Security
+- Ranked consistently in the Top 4% globally.
+Security Tools Practice Offensive & Defensive Security
 - Conducted penetration testing and vulnerability assessments using Burp Suite, Wireshark, Metasploit, and Hashcat.
-    - Performed intelligence-driven investigations using MISP, OpenCTI, UrlScan.io, Abuse.ch, and Cisco Talos.
+- Performed intelligence-driven investigations using MISP, OpenCTI, UrlScan.io, Abuse.ch, and Cisco Talos.
 
 ## Technical Skills
 
@@ -84,9 +103,10 @@ Programming: Python, JavaScript, TypeScript, Node.js, Next.js, Java, PHP, SQL
 Security Tools: Metasploit, Burp Suite, Wireshark, Hashcat, Hydra, John the Ripper, MISP, OpenCTI, VirusTotal,
 Abuse.ch, Talos Intelligence
 Automation & AI: n8n, Gmail API, Webhooks, API Integrations, Agora AI, OpenAI, Gemini, Groq
-Frontend: NextJS, React, ReactNative, Angular, Svelt, TailwindCSS, Chart.js, ShadCN UI, MUI
-Backend: Express.js, Django, REST APIs
-Cloud (AWS): DynamoDB, Kendra, S3, EC2, Route
+Frontend: NextJS, React, ReactNative, Angular, Bootstap, Svelt, TailwindCSS, Chart.js, ShadCN UI, MUI
+Backend: Express.js, Django, REST APIs, Firebase
+Cloud: DynamoDB, Kendra, S3, EC2, Route53, CloudSail, Koyeb, Cloudflare, Cloud Run, DNS
+Operating System: Windows, Parrot, Kali, Ubuntu
 Other: Secure Coding, SOC Fundamentals, Threat Intelligence
 ```
 ## Achievements
@@ -99,18 +119,19 @@ AWS Cloud Club Operations Member
 Participant — AWS Cloud Club PH Innovation Cup 2025
 Participant — First AI Regional Conference Hackathon 2025
 ```
+
 ## Education
 
 ### Gordon College Olongapo, Philippines
 
-```
-Bachelor of Science in Computer Science Expected Jul. 2026
-```
+Bachelor of Science in Computer Science Expected June. 2026
+
 ## Affiliations
 
-```
 Committee Member — AWS Cloud Club, Gordon College
+
 Member — TryHackMe Community
+
 Datacamp Scholar
-```
+
 

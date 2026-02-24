@@ -3,6 +3,7 @@ import dp from "@/assets/dp.jpg"
 import fitup from "@/assets/fitup.png"
 import { blogContent1, blogContent2, blogContent3, blogContent4, blogContent5 } from './blog-contents';
 import auralis from "@/assets/auralis.png"
+import phishguard from "@/assets/phishguard.png"
 
 export const profile: Profile = {
   name: "Kent Harold Belen",
@@ -41,6 +42,25 @@ export const profile: Profile = {
 };
 
 export const projects: Project[] = [
+  {
+    id: "0",
+    title: "PhishGuard",
+    description: "A serverless SaaS platform re-architected from Auralis for scalable phishing detection and threat intelligence. Aggregates multi-source CTI from VirusTotal, AbuseIPDB, IPQualityScore, Shodan, URLhaus, and OTX with AI-assisted verdict generation and confidence scoring.",
+    image: phishguard.src,
+    technologies: ["AWS Lambda", "DynamoDB", "Cloudflare R2", "Gmail API", "IMAP", "VirusTotal", "AbuseIPDB", "IPQualityScore", "Shodan", "OTX", "URLhaus", "AI/ML"],
+    liveUrl: "https://phishguard-chi.vercel.app/",
+    githubUrl: "https://github.com/kentdevu",
+    featured: true,
+    highlight: true,
+    features: [
+      "Automated email ingestion via Gmail API and IMAP (IDLE) for real-time phishing analysis",
+      "CTI aggregation from VirusTotal, AbuseIPDB, IPQualityScore, Shodan, URLhaus, and OTX",
+      "AI-based multi-source correlation with unified verdicts and confidence scoring",
+      "Serverless microservice architecture with horizontal scaling and tenant-based isolation",
+      "DynamoDB for threat storage, Cloudflare R2 for artifacts, Vercel for frontend"
+    ],
+    outcome: "Reduced manual phishing triage by over 80% through automated CTI aggregation and AI-assisted decision logic."
+  },
   {
     id: "1",
     title: "Auralis",
