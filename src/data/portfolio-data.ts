@@ -48,7 +48,7 @@ export const projects: Project[] = [
     description: "A serverless SaaS platform re-architected from Auralis for scalable phishing detection and threat intelligence. Aggregates multi-source CTI from VirusTotal, AbuseIPDB, IPQualityScore, Shodan, URLhaus, and OTX with AI-assisted verdict generation and confidence scoring.",
     image: phishguard.src,
     technologies: ["AWS Lambda", "DynamoDB", "Cloudflare R2", "Gmail API", "IMAP", "VirusTotal", "AbuseIPDB", "IPQualityScore", "Shodan", "OTX", "URLhaus", "AI/ML"],
-    liveUrl: "https://phishguard-chi.vercel.app/",
+    liveUrl: "https://secuvia.vercel.app/",
     githubUrl: "https://github.com/kentdevu",
     featured: true,
     highlight: true,
