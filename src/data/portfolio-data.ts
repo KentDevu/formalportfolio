@@ -44,7 +44,7 @@ export const profile: Profile = {
 export const projects: Project[] = [
   {
     id: "0",
-    title: "PhishGuard",
+    title: "Secuvia",
     description: "A serverless SaaS platform re-architected from Auralis for scalable phishing detection and threat intelligence. Aggregates multi-source CTI from VirusTotal, AbuseIPDB, IPQualityScore, Shodan, URLhaus, and OTX with AI-assisted verdict generation and confidence scoring.",
     image: phishguard.src,
     technologies: ["AWS Lambda", "DynamoDB", "Cloudflare R2", "Gmail API", "IMAP", "VirusTotal", "AbuseIPDB", "IPQualityScore", "Shodan", "OTX", "URLhaus", "AI/ML"],
