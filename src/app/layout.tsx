@@ -1,24 +1,29 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { ThemeProvider } from "@/components/common/theme-provider";
-import { Navigation } from "@/components/common/navigation";
-import { Footer } from "@/components/common/footer";
-import Aurora from "@/components/ui/aurora";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
-  title: "Portfolio | Modern Developer Portfolio",
-  description: "A modern portfolio showcasing projects, achievements, blogs, and professional journey with AI-powered assistance.",
-  keywords: ["portfolio", "developer", "next.js", "react", "typescript", "AI"],
-  authors: [{ name: "Your Name" }],
+  title: "Kent Harold Belen — Tech Lead × Security Engineer",
+  description:
+    "Kent Harold Belen — Tech Lead at Catalyx Solutions, Software Engineer at Lujo PH. Full-stack + security + AI. Top 4% TryHackMe. Based in Makati, PH.",
+  keywords: [
+    "Kent Harold Belen",
+    "portfolio",
+    "tech lead",
+    "security engineer",
+    "full-stack",
+    "cybersecurity",
+  ],
+  authors: [{ name: "Kent Harold Belen" }],
   openGraph: {
-    title: "Portfolio | Modern Developer Portfolio",
-    description: "A modern portfolio showcasing projects, achievements, blogs, and professional journey with AI-powered assistance.",
+    title: "Kent Harold Belen — Tech Lead × Security Engineer",
+    description:
+      "Full-stack + security + AI. Top 4% TryHackMe. Based in Makati, PH.",
     type: "website",
   },
 };
@@ -29,31 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} font-sans antialiased min-h-screen bg-background text-foreground`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Aurora 
-            colorStops={['#3A29FF', '#FF94B4', '#FF3232']}
-            amplitude={1.2}
-            blend={0.6}
-            speed={0.4}
-          />
-          <div className="relative flex min-h-screen flex-col">
-            <Navigation />
-            <main className="flex-1">
-              {children}
-            </main>
-            <Footer />
-          </div>
-        </ThemeProvider>
-      </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }
