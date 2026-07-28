@@ -20,7 +20,7 @@ function addId(raw: RawLine): Line {
 }
 
 const T = {
-  role: "Software Engineer × Tech Lead × AI Agent Specialist",
+  role: "AI Engineer × Tech Lead × AI Agent Specialist",
   loc: "Makati, Philippines",
   email: "belenkentharold@gmail.com",
   availability: "Open to AI agent dev, security automation, or automation roles",
@@ -50,13 +50,13 @@ function getCommandOutput(cmd: string): RawLine[] | "clear" {
         { kind: "ok", text: "kent@portfolio" },
         { kind: "out", text: T.role },
         { kind: "dim", text: "─".repeat(48) },
-        { kind: "out", text: "Software Engineer at Tenext.AI." },
+        { kind: "out", text: "Senior Executive — AI Engineer at EXL Service Philippines." },
         { kind: "out", text: "Tech Lead & Co-Founder at Catalyx Solutions." },
         { kind: "out", text: "AWS Cloud Club PH committee." },
         { kind: "out", text: "Top 4% global on TryHackMe." },
         { kind: "out", text: "Base PH Hackathon winner." },
         { kind: "dim", text: "" },
-        { kind: "dim", text: "I ship products that solve real problems." },
+        { kind: "dim", text: "I build AI pipelines that lift sales and automate business process." },
         { kind: "dim", text: "Type `projects` to see what I've built." },
       ];
     case "projects":
@@ -128,7 +128,7 @@ function getCommandOutput(cmd: string): RawLine[] | "clear" {
         { kind: "kv", k: "location", v: T.loc },
         { kind: "kv", k: "phone", v: "+63 993-042-6695" },
         { kind: "kv", k: "github", v: "github.com/Kentdevu" },
-        { kind: "kv", k: "linkedin", v: "linkedin.com/in/kent-harold-belen" },
+        { kind: "kv", k: "linkedin", v: "linkedin.com/in/kentharoldbelen" },
         { kind: "dim", text: "" },
         { kind: "dim", text: "→ reply time < 24h. seriously." },
       ];
@@ -155,9 +155,10 @@ function getCommandOutput(cmd: string): RawLine[] | "clear" {
       ];
     case "cat about.txt":
       return [
-        { kind: "out", text: "Software Engineer at Tenext.AI. Tech Lead at Catalyx Solutions." },
-        { kind: "out", text: "I deploy AI agents, architect security automation, and build" },
-        { kind: "out", text: "scalable full-stack apps that bridge engineering and cybersecurity." },
+        { kind: "out", text: "AI Engineer at EXL Service PH. Tech Lead at Catalyx Solutions." },
+        { kind: "out", text: "I build AI pipelines that boost sales and business throughput," },
+        { kind: "out", text: "architect security automation, and ship scalable full-stack apps" },
+        { kind: "out", text: "that bridge engineering and cybersecurity." },
       ];
     default:
       return [{ kind: "err", text: `command not found: ${cmd} — try \`help\`` }];

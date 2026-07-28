@@ -10,7 +10,10 @@ export function AboutSection() {
           <div className="about-body reveal">
             <p>
               I&apos;m a{" "}
-              <span className="hl">Software Engineer at Tenext.AI</span> and{" "}
+              <span className="hl">
+                Senior Executive — AI Engineer at EXL Service Philippines
+              </span>{" "}
+              and{" "}
               <span className="hl">Tech Lead &amp; Co-Founder at Catalyx Solutions</span>,
               working at the intersection of AI agent deployment, full-stack
               engineering, and cybersecurity — a combination most teams hire
@@ -18,8 +21,9 @@ export function AboutSection() {
             </p>
             <p>
               My work ranges from{" "}
-              <em>configuring and deploying AI agents</em> — chatbots, callbots,
-              and emailbots — to{" "}
+              <em>designing AI pipelines that boost sales and business throughput</em>,
+              to <em>configuring and deploying AI agents</em> — chatbots,
+              callbots, and emailbots — to{" "}
               <em>architecting security automation platforms</em> that cut
               analyst workload by 70%, to building{" "}
               <em>nationwide inventory systems</em> running across multiple
@@ -40,11 +44,22 @@ export function AboutSection() {
           <div className="section-label reveal">Trajectory</div>
           <div className="about-timeline reveal-stagger">
             <div className="tl-item now">
-              <div className="tl-date">Apr 2026 — Now</div>
+              <div className="tl-date">Jul 2026 — Now</div>
+              <div className="tl-role">Senior Executive — AI Engineer</div>
+              <div className="tl-where">EXL Service Philippines, Inc.</div>
+              <div className="tl-desc">
+                Building AI pipelines that lift sales and compress business
+                process cycle time — mapping high-friction manual workflows,
+                then re-architecting them as LLM-driven automation wired into
+                client sales and operations stacks.
+              </div>
+            </div>
+            <div className="tl-item">
+              <div className="tl-date">Apr 2026 — Jul 2026</div>
               <div className="tl-role">Software Engineer</div>
               <div className="tl-where">Tenext.AI · Makati (Hybrid)</div>
               <div className="tl-desc">
-                Deploying AI agents — chatbots, callbots, emailbots. Embedding
+                Deployed AI agents — chatbots, callbots, emailbots. Embedded
                 conversational AI into client CRMs and websites.
               </div>
             </div>
@@ -84,12 +99,11 @@ export function AboutSection() {
               </div>
             </div>
             <div className="tl-item">
-              <div className="tl-date">2022 — Jun 2026</div>
+              <div className="tl-date">2022 — Jul 2026</div>
               <div className="tl-role">BS Computer Science</div>
               <div className="tl-where">Gordon College, Olongapo</div>
               <div className="tl-desc">
-                Expected graduation June 2026. DataCamp Scholar. AWS Cloud Club
-                Committee.
+                Graduated July 2026. DataCamp Scholar. AWS Cloud Club Committee.
               </div>
             </div>
           </div>

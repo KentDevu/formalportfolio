@@ -14,10 +14,11 @@ export function HeroSection() {
           <span className="cursor-block" />
         </h1>
         <p className="hero-tagline reveal">
-          <span className="hl">Software Engineer</span> at Tenext.AI &amp;{" "}
-          <span className="hl">Tech Lead</span> at Catalyx Solutions. I deploy
-          AI agents, architect security automation platforms, and ship products
-          that measurably move numbers.
+          <span className="hl">Senior Executive — AI Engineer</span> at EXL
+          Service Philippines &amp;{" "}
+          <span className="hl">Tech Lead</span> at Catalyx Solutions. I build AI
+          pipelines that lift sales, architect security automation platforms,
+          and ship products that measurably move numbers.
         </p>
         <div className="hero-stats reveal-stagger">
           <div>

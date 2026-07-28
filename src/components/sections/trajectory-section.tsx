@@ -6,7 +6,7 @@ const STAGES = [
   {
     label: "Education",
     desc: "Gordon College — BS Computer Science. DataCamp Scholar. AWS Cloud Club.",
-    period: "2022 — 2026",
+    period: "2022 — Jul 2026",
   },
   {
     label: "Kloudtech",
@@ -36,7 +36,12 @@ const STAGES = [
   {
     label: "Tenext.AI",
     desc: "AI agents — chatbots, callbots, emailbots. CRM & lead automation.",
-    period: "Apr 2026 — Now",
+    period: "Apr — Jul 2026",
+  },
+  {
+    label: "EXL Service PH",
+    desc: "AI pipelines that lift sales & automate business processes end to end.",
+    period: "Jul 2026 — Now",
   },
 ];
 
